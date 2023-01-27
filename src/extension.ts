@@ -6,7 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
   const ncp = require("copy-paste");
   let disposable = vscode.commands.registerTextEditorCommand(
     "ngform-generator.generate-form",
-    (textEditor, edit) => {
+    (textEditor, _) => {
       const text = textEditor.document.getText();
       const classData = extractData(text);
       const form = generateHtmlForm(classData);
